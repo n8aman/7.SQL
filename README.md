@@ -12,7 +12,8 @@ update <> set age=14
 delete from <> or ;
 
 
-WHERE age=4, name='egg', id=age, name='misty', shirt_size='m', LIKE '%_\%_%', rating IS NULL;
+## WHERE 
+age=4, name='egg', id=age, name='misty', shirt_size='m', LIKE '%_\%_%', rating IS NULL;
 != 
 NOT LIKE '%_____%';
 > < >= <= 500; (pages,released_year)
