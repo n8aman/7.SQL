@@ -1,4 +1,8 @@
 # 7.SQL
+ What is A unique key also enforces uniqueness like a primary key, but it can accept one null value
+ Indexes are special lookup tables that speed up data retrieval in a database.
+
+
 show databases;
 use<>;
 drop database
@@ -197,44 +201,6 @@ GROUP BY first_name , last_name;
 
 # sub- queries
 SELECT * FROM orders WHERE customer_id = (SELECT id FROM customers WHERE last_name = 'abc');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 CREATE TABLE customers (
