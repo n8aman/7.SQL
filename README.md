@@ -1,7 +1,22 @@
-# 7.SQL
- What is A unique key also enforces uniqueness like a primary key, but it can accept one null value
- Indexes are special lookup tables that speed up data retrieval in a database.
+# 7.SQL ER(entity relationship) diagram
+Entities – Real-world objects or concepts (e.g., Student, Course).
 
+Attributes – Properties of those entities (e.g., Student Name, Course Title).🔸 Simple Attribute: Cannot be divided further.Example: FirstName 🔸 Composite Attribute: Can be broken into sub-parts.Example: FullName → FirstName + LastName 🔸 Derived Attribute: Can be derived from other attributes.Example: Age from DOB🔸 Key Attribute: Uniquely identifies an entity.Example: StudentID
+
+Relationships – Associations between entities (e.g., A Student enrolls in a Course).🔸 One-to-One (1:1): One entity relates to only one of another.🔸 One-to-Many (1:N): One entity relates to many of another.🔸 Many-to-Many (M:N): Many entities relate to many others.
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+What is A unique key also enforces uniqueness like a primary key, but it can accept one null value
+Indexes are special lookup tables that speed up data retrieval in a database.
 
 show databases;
 use<>;
