@@ -122,6 +122,8 @@ Indexes are special lookup tables that speed up data retrieval in a database.
 What's the difference between DATETIME and TIMESTAMP?-- They both store datetime information, but there's a difference in the range, -- TIMESTAMP has a smaller range. TIMESTAMP also takes up less space.-- TIMESTAMP is used for things like meta-data about when something is created-- or updated.
 
 --FOREIGN KEY (customer_id) REFERENCES customers (id) ON DELETE CASCADE
+--CREATE TABLE enrollment (Composite Primary Key student_id INT,course_id INT,enrollment_date DATE,PRIMARY KEY (student_id, course_id) A student can enroll in many courses.A course can have many students.But the same student can’t enroll in the same course twice — because the combination student_id + course_id must be unique.
+
 
 
    
