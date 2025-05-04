@@ -106,7 +106,7 @@ PARTITION BY, RANK(),  ROW_NUMBER(),  DENSE_RANK(), NTILE(),  FIRST_
 SELECT * FROM orders WHERE customer_id = (SELECT id FROM customers WHERE last_name = 'abc');
 
 ### CASE STATEMENTS
-
+![composite key](https://github.com/user-attachments/assets/76a2bef3-df4e-4347-825b-85b7794e0be3)
 ============================================================================================
 
 ### ER(entity relationship) diagram
@@ -129,7 +129,7 @@ SET GLOBAL interactive_timeout=28800;
 -----------------------------------WORKBENCHSETTINGS--------------------------------------
 
 
-![composite key](https://github.com/user-attachments/assets/76a2bef3-df4e-4347-825b-85b7794e0be3)
+
 
 
 
