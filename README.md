@@ -1,15 +1,7 @@
-# 7.SQL
-### ER(entity relationship) diagram
-Entities – Real-world objects or concepts (e.g., Student, Course).
-
-Attributes – Properties of those entities (e.g., Student Name, Course Title).🔸 Simple Attribute: Cannot be divided further.Example: FirstName 🔸 Composite Attribute: Can be broken into sub-parts.Example: FullName → FirstName + LastName 🔸 Derived Attribute: Can be derived from other attributes.Example: Age from DOB🔸 Key Attribute: Uniquely identifies an entity.Example: StudentID
-
-Relationships – Associations between entities (e.g., A Student enrolls in a Course).🔸 One-to-One (1:1): One entity relates to only one of another.🔸 One-to-Many (1:N): One entity relates to many of another.🔸 Many-to-Many (M:N): Many entities relate to many others.
-
-### course
+# 7.SQL basics
 show databases;
 use<>;
-drop database
+drop databass
 create table<>(id int primary key auto_increment, name varchar(50) not null default 'no name provided', age int not null default 99, created_at TIMESTAMP default CURRENT_TIMESTAMP, updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,   phone VARCHAR(15) NOT NULL UNIQUE, age INT CHECK (age > 0), word VARCHAR(100) CHECK(REVERSE(word) = word) , CONSTRAINT age_not_negative CHECK (age >= 0),  CONSTRAINT word_is_palindrome CHECK(REVERSE(word) = word),    CONSTRAINT name_address UNIQUE (name , address), 
 show tables;
 show columns from <tableName>;    desc<tableName>;
@@ -115,14 +107,28 @@ SELECT * FROM orders WHERE customer_id = (SELECT id FROM customers WHERE last_na
 
 ### CASE STATEMENTS
 
-### interviewQ
-What's a good use case for CHAR? -- Used for text that we know has a fixed length, e.g., State abbreviations, -- abbreviated company names, etc.
-What is A unique key also enforces uniqueness like a primary key, but it can accept one null value
-Indexes are special lookup tables that speed up data retrieval in a database.
-What's the difference between DATETIME and TIMESTAMP?-- They both store datetime information, but there's a difference in the range, -- TIMESTAMP has a smaller range. TIMESTAMP also takes up less space.-- TIMESTAMP is used for things like meta-data about when something is created-- or updated.
+============================================================================================
 
---FOREIGN KEY (customer_id) REFERENCES customers (id) ON DELETE CASCADE
---CREATE TABLE enrollment (Composite Primary Key student_id INT,course_id INT,enrollment_date DATE,PRIMARY KEY (student_id, course_id) A student can enroll in many courses.A course can have many students.But the same student can’t enroll in the same course twice — because the combination student_id + course_id must be unique.
+### ER(entity relationship) diagram
+Entities – Real-world objects or concepts (e.g., Student, Course).
+
+Attributes – Properties of those entities (e.g., Student Name, Course Title).🔸 Simple Attribute: Cannot be divided further.Example: FirstName 🔸 Composite Attribute: Can be broken into sub-parts.Example: FullName → FirstName + LastName 🔸 Derived Attribute: Can be derived from other attributes.Example: Age from DOB🔸 Key Attribute: Uniquely identifies an entity.Example: StudentID
+
+Relationships – Associations between entities (e.g., A Student enrolls in a Course).🔸 One-to-One (1:1): One entity relates to only one of another.🔸 One-to-Many (1:N): One entity relates to many of another.🔸 Many-to-Many (M:N): Many entities relate to many others.
+
+
+# SQL Advance.
+-- 1) adjusting max packet size to allow large files to run
+SET GLOBAL max_allowed_packet = 1073741824;
+-- 2) adjusting your SQL mode to allow invalid dates and use a smarter GROUP BY setting
+SET GLOBAL SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES,ONLY_FULL_GROUP_BY';
+-- 3) adjusting your timeout settings to run longer queries
+SET GLOBAL connect_timeout=28800;
+SET GLOBAL wait_timeout=28800;
+SET GLOBAL interactive_timeout=28800;
+-----------------------------------WORKBENCHSETTINGS--------------------------------------
+
+
 
 
 
