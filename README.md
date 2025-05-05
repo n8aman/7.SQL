@@ -1,4 +1,5 @@
 # 7.SQL basics
+--- windows+R    services.msc---
 show databases;
 use<>;
 drop databass
