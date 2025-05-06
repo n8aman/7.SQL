@@ -53,7 +53,43 @@ SELECT * FROM people WHERE HOUR(birthtime)BETWEEN 12 AND 16;
 
 
 
+### joins
+-- To perform a (kind of useless) cross join:SELECT * FROM customers, orders;
+-- The order doesn't matter here:SELECT * FROM ordersJOIN customers ON customers.id = orders.customer_id; or vice versa.
+JOIN____ON_________
+INNER JOIN, LEFT JOIN, RIGHT JOIN,
+GROUP BY first_name , last_name
+ORDER BY total{first_name, last_name, SUM(amount) AS total};
+
+
+### GROUP BY
+(HAVING, ROLLUP,) COUNT(rating) > 1; GROUP BY title WITH ROLLUP;
+
+
+### To View Modes:
+SELECT @@GLOBAL.sql_mode;
+SELECT @@SESSION.sql_mode;
+
+
+-- To Set Them:
+SET GLOBAL sql_mode = 'modes';
+SET SESSION sql_mode = 'modes';
+STRICT_TRANS_TABLE
+ONLY_FULL_GROUP_BY
+NO_ZERO_IN_DATE
+
+
+### windowsFunction Using Over()
+PARTITION BY, RANK(),  ROW_NUMBER(),  DENSE_RANK(), NTILE(),  FIRST_
+
+### sub- queries
+SELECT * FROM orders WHERE customer_id = (SELECT id FROM customers WHERE last_name = 'abc');
+
+### CASE STATEMENTS
+
+==============   ==============  ===============  ===============  =============
 ### VIEW
+
 -- INSTEAD OF TYPING THIS QUERY ALL THE TIME...
 SELECT title, released_year, genre, rating, first_name, last_name FROM reviews
 JOIN series ON series.id = reviews.series_id
@@ -76,61 +112,7 @@ ALTER VIEW ordered_series AS
 SELECT * FROM series ORDER BY released_year;
 DROP VIEW ordered_series;
 
-
-
-### joins
--- To perform a (kind of useless) cross join:SELECT * FROM customers, orders;
--- The order doesn't matter here:SELECT * FROM ordersJOIN customers ON customers.id = orders.customer_id; or vice versa.
-JOIN____ON_________
-INNER JOIN, LEFT JOIN, RIGHT JOIN,
-GROUP BY first_name , last_name
-ORDER BY total{first_name, last_name, SUM(amount) AS total};
-
-
-
-### GROUP BY
-(HAVING, ROLLUP,) COUNT(rating) > 1; GROUP BY title WITH ROLLUP;
-
-
-
-### To View Modes:
-SELECT @@GLOBAL.sql_mode;
-SELECT @@SESSION.sql_mode;
-
-
-
--- To Set Them:
-SET GLOBAL sql_mode = 'modes';
-SET SESSION sql_mode = 'modes';
-STRICT_TRANS_TABLE
-ONLY_FULL_GROUP_BY
-NO_ZERO_IN_DATE
-
-
-
-### windowsFunction Using Over()
-PARTITION BY, RANK(),  ROW_NUMBER(),  DENSE_RANK(), NTILE(),  FIRST_
-
-### sub- queries
-SELECT * FROM orders WHERE customer_id = (SELECT id FROM customers WHERE last_name = 'abc');
-
-### CASE STATEMENTS
-
-==============   ==============  ===============  ===============  =============
-
-
-# SQL Advance.
--- 1) adjusting max packet size to allow large files to run
-SET GLOBAL max_allowed_packet = 1073741824;
--- 2) adjusting your SQL mode to allow invalid dates and use a smarter GROUP BY setting
-SET GLOBAL SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES,ONLY_FULL_GROUP_BY';
--- 3) adjusting your timeout settings to run longer queries
-SET GLOBAL connect_timeout=28800;
-SET GLOBAL wait_timeout=28800;
-SET GLOBAL interactive_timeout=28800;
-
------------------------------------WORKBENCHSETTINGS--------------------------------------
-
+###  STORED  PROCEDURE
 
 
 
