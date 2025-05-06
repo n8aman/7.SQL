@@ -114,18 +114,9 @@ DROP VIEW ordered_series;
 
 ###  STORED  PROCEDURE
 - each line of sql is declerative statement
-- define all the logic between  BEGIN and END keyword;
-
-
-
-
-
-
-
-
-
-
-
+- define all the logic between  BEGIN and END keyword; more tham one declarative statement,
+- 
+- 
 
 
 
