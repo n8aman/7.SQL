@@ -113,6 +113,19 @@ SELECT * FROM series ORDER BY released_year;
 DROP VIEW ordered_series;
 
 ###  STORED  PROCEDURE
+- each line of sql is declerative statement
+- define all the logic between  BEGIN and END keyword;
+
+
+
+
+
+
+
+
+
+
+
 
 
 
