@@ -27,6 +27,7 @@ order by author_lname,
 limit 5, 50;
 
 
+
 select max()/min(), sum(), avg(), 
 ALTER TABLE <> ADD COLUMN phone VARCHAR(15); ==ALTER TABLE <> ADD COLUMN employee_count INT NOT NULL DEFAULT 1==ALTER TABLE companies DROP COLUMN phone;
 RENAME TABLE companies to suppliers; ALTER TABLE suppliers RENAME TO companies; ALTER TABLE companies RENAME COLUMN name TO company_name;
@@ -34,6 +35,7 @@ ALTER TABLE companies MODIFY company_name VARCHAR(100) DEFAULT 'unknown';
 ALTER TABLE suppliers CHANGE business biz_name VARCHAR(50);
 ALTER TABLE houses ADD CONSTRAINT positive_pprice CHECK (purchase_price >= 0);ALTER TABLE houses DROP CONSTRAINT positive_pprice;
 PRIMARY KEY, FOREIGN KEY
+
 
 ### date
 select curtime(), curdate(), now(),
@@ -46,9 +48,9 @@ SELECT DAYNAME(NOW());
 SELECT DATE_FORMAT(NOW(), '%W');
 SELECT DATE_FORMAT(CURDATE(), '%m/%d/%Y');
 SELECT DATE_FORMAT(NOW(), '%M %D at %k:%i');
-
 SELECT * FROM people WHERE birthtime BETWEEN CAST('12:00:00' AS TIME) AND CAST('16:00:00' AS TIME);
 SELECT * FROM people WHERE HOUR(birthtime)BETWEEN 12 AND 16;
+
 
 
 ### VIEW
@@ -75,6 +77,7 @@ SELECT * FROM series ORDER BY released_year;
 DROP VIEW ordered_series;
 
 
+
 ### joins
 -- To perform a (kind of useless) cross join:SELECT * FROM customers, orders;
 -- The order doesn't matter here:SELECT * FROM ordersJOIN customers ON customers.id = orders.customer_id; or vice versa.
@@ -84,20 +87,25 @@ GROUP BY first_name , last_name
 ORDER BY total{first_name, last_name, SUM(amount) AS total};
 
 
+
 ### GROUP BY
 (HAVING, ROLLUP,) COUNT(rating) > 1; GROUP BY title WITH ROLLUP;
+
 
 
 ### To View Modes:
 SELECT @@GLOBAL.sql_mode;
 SELECT @@SESSION.sql_mode;
- 
+
+
+
 -- To Set Them:
 SET GLOBAL sql_mode = 'modes';
 SET SESSION sql_mode = 'modes';
 STRICT_TRANS_TABLE
 ONLY_FULL_GROUP_BY
 NO_ZERO_IN_DATE
+
 
 
 ### windowsFunction Using Over()
@@ -107,15 +115,8 @@ PARTITION BY, RANK(),  ROW_NUMBER(),  DENSE_RANK(), NTILE(),  FIRST_
 SELECT * FROM orders WHERE customer_id = (SELECT id FROM customers WHERE last_name = 'abc');
 
 ### CASE STATEMENTS
-![composite key](https://github.com/user-attachments/assets/76a2bef3-df4e-4347-825b-85b7794e0be3)
-============================================================================================
 
-### ER(entity relationship) diagram
-Entities – Real-world objects or concepts (e.g., Student, Course).
-
-Attributes – Properties of those entities (e.g., Student Name, Course Title).🔸 Simple Attribute: Cannot be divided further.Example: FirstName 🔸 Composite Attribute: Can be broken into sub-parts.Example: FullName → FirstName + LastName 🔸 Derived Attribute: Can be derived from other attributes.Example: Age from DOB🔸 Key Attribute: Uniquely identifies an entity.Example: StudentID
-
-Relationships – Associations between entities (e.g., A Student enrolls in a Course).🔸 One-to-One (1:1): One entity relates to only one of another.🔸 One-to-Many (1:N): One entity relates to many of another.🔸 Many-to-Many (M:N): Many entities relate to many others.
+==============   ==============  ===============  ===============  =============
 
 
 # SQL Advance.
@@ -127,7 +128,30 @@ SET GLOBAL SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES,ONLY_FULL_GROUP_BY';
 SET GLOBAL connect_timeout=28800;
 SET GLOBAL wait_timeout=28800;
 SET GLOBAL interactive_timeout=28800;
+
 -----------------------------------WORKBENCHSETTINGS--------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
