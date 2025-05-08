@@ -114,11 +114,17 @@ DROP VIEW ordered_series;
 ###  STORED  PROCEDURE
 -------------------------------------------
 
+
+# PRACTICE
+
+🔸 departments
 | Column         | Type         |
 | -------------- | ------------ |
 | department\_id | INT (PK)     |
 | name           | VARCHAR(100) |
 
+
+🔸 employees
 | Column         | Type          |
 | -------------- | ------------- |
 | employee\_id   | INT (PK)      |
@@ -133,11 +139,20 @@ DROP VIEW ordered_series;
 
 
 WHERE gender = 'F';
+WHERE hire_date > '2020-01-01';
+WHERE salary > 50000;
+WHERE department_id = 3 ORDER BY salary DESC;
+WHERE ORDER BY salary DESC LIMIT 5;
+WHERE name LIKE 'A%';
+WHERE department_id IS NULL;
+WHERE salary BETWEEN 30000 AND 70000;
 
 
 
 
-
+SELECT COUNT(*) FROM employees WHERE YEAR(hire_date) = 2023;
+SELECT department_id, COUNT(*) FROM employees GROUP BY department_id;
+SELECT department_id, SUM(salary) FROM employees GROUP BY department_id;
 
 
 
