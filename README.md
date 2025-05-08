@@ -111,12 +111,28 @@ SELECT * FROM series ORDER BY released_year DESC;
 ALTER VIEW ordered_series AS
 SELECT * FROM series ORDER BY released_year;
 DROP VIEW ordered_series;
-
 ###  STORED  PROCEDURE
-- each line of sql is declerative statement
-- define all the logic between  BEGIN and END keyword; more tham one declarative statement,
-- 
-- 
+-------------------------------------------
+
+| Column         | Type         |
+| -------------- | ------------ |
+| department\_id | INT (PK)     |
+| name           | VARCHAR(100) |
+
+| Column         | Type          |
+| -------------- | ------------- |
+| employee\_id   | INT (PK)      |
+| name           | VARCHAR(100)  |
+| department\_id | INT (FK)      |
+| salary         | DECIMAL(10,2) |
+| hire\_date     | DATE          |
+| gender         | ENUM('M','F') |
+
+
+
+
+
+WHERE gender = 'F';
 
 
 
