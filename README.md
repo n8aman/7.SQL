@@ -62,6 +62,7 @@ GROUP BY first_name , last_name
 ORDER BY total{first_name, last_name, SUM(amount) AS total};
 
 
+
 ### GROUP BY
 (HAVING, ROLLUP,) COUNT(rating) > 1; GROUP BY title WITH ROLLUP;
 
@@ -87,7 +88,7 @@ SELECT * FROM orders WHERE customer_id = (SELECT id FROM customers WHERE last_na
 
 ### CASE STATEMENTS
 
-==============   ==============  ===============  ===============  =============
+==============   ==============   ===============   ===============   =============
 ### VIEW
 
 -- INSTEAD OF TYPING THIS QUERY ALL THE TIME...
@@ -112,8 +113,7 @@ ALTER VIEW ordered_series AS
 SELECT * FROM series ORDER BY released_year;
 DROP VIEW ordered_series;
 ###  STORED  PROCEDURE
--------------------------------------------
-
+----------------------------------------------
 
 # PRACTICE
 
@@ -137,7 +137,6 @@ DROP VIEW ordered_series;
 
 
 
-
 WHERE gender = 'F';
 WHERE hire_date > '2020-01-01';
 WHERE salary > 50000;
@@ -153,6 +152,8 @@ WHERE salary BETWEEN 30000 AND 70000;
 SELECT COUNT(*) FROM employees WHERE YEAR(hire_date) = 2023;
 SELECT department_id, COUNT(*) FROM employees GROUP BY department_id;
 SELECT department_id, SUM(salary) FROM employees GROUP BY department_id;
+UPDATE departments SET name = 'Research' WHERE department_id = 3;
+DELETE FROM employees WHERE salary < 25000;
 
 
 
